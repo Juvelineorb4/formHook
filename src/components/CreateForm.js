@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import axios from 'axios';
+//import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -7,7 +8,7 @@ import axios from 'axios';
 
 
 
-export default function CreateForm() {
+ function CreateForm(props) {
 
     const [name, setName]= useState("");
     const [lastName, setLastName]= useState("");
@@ -16,6 +17,7 @@ export default function CreateForm() {
     const [typeDoc, setTypeDoc]=useState("");
     const [document, setDocument]=useState("");
 
+ 
 
     async function onSubmit(e){
         e.preventDefault();
@@ -25,12 +27,19 @@ export default function CreateForm() {
             phone: prefPh+phone,
             document: typeDoc+document
         }
-        await axios.post('http://localhost:4000/api/formularios', newForm);
+       // console.log(newForm);
+      props.history.push({
+            pathname: 'formList',
+            state: newForm
+            
+        });
+        //console.log(props.history);
+        //await axios.post('http://localhost:4000/api/formularios', newForm);
     }
     const onInputChange = (name)=>(e)=>{
         const {target} = e;
         const {value} = target;
-        console.log(name + " :" + value);
+        //console.log(name + " :" + value);
         switch(name){
             case "name":
                 setName(value);
@@ -86,7 +95,7 @@ export default function CreateForm() {
 					    </select>
                     </div>
                     <div className="form-group col-12 col-md-9">
-                        <input type="number" className="form-control" onChange={onInputChange("Phone")}  required/>
+                        <input type="number" className="form-control" onChange={onInputChange("phone")}  required/>
                     </div>
                 </div>
                 <div className="form-row">
@@ -110,3 +119,4 @@ export default function CreateForm() {
         </div>
     )
 }
+export default withRouter(CreateForm);
