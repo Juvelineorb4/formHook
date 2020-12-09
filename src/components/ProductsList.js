@@ -25,12 +25,13 @@ export default function ProductsList() {
             {items !== undefined ? items.map((product) => {
                     return (
                         
-                        <div className="col-4 p-2">
+                        <div className="col-4 p-2" key={product._id}>
                             <div className="card h-100">
                                 <div className=" cdHProduct card-header ">
                                      
-                                     <img src={product.Children[0].Imgs[0].Path}  className="  card-img-top imgProduct" />
-                                     {console.log(product)}
+                                     <img src={product.Children[0].Imgs[0].Path}  className="  card-img-top imgProduct" alt={product.Children[0].Imgs[0].Alt}/>
+                                    
+                                     {/*console.log(product)*/}
                                 </div>
                                 <div className="card-body text-center">
                                 <p >{product.Name}</p>
