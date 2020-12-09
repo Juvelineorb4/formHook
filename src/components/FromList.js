@@ -29,7 +29,7 @@ import { withRouter } from 'react-router-dom';
         <div className="row d-flex justify-content-center" >
             <div className="col-6">
               <div className="card">
-                  <div className="card-header d-flex justify-content-between" >
+                  <div className="  card-header d-flex justify-content-between" >
                         <h5 >User: {fName + " "+fLastName}</h5>
                         <button className="btn btn-danger" onClick={() => backForm()}>  
                                             Back

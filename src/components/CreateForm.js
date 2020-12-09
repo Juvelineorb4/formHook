@@ -68,7 +68,7 @@ import { withRouter } from 'react-router-dom';
 
 
     return (
-        <div className="col-md-6 border offset-md-3">
+        <div className="col-md-6 border offset-md-3 bg-white">
             <form onSubmit={onSubmit} className="">
                 <div className="form-row">
                     <div className="form-group col-6">

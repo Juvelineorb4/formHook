@@ -1,7 +1,9 @@
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Navigation from './components/Navigation';
 import CreateForm from './components/CreateForm';
 import FormList from './components/FromList';
+import ProductsList from './components/ProductsList';
+import './App.css';
 
 
 
@@ -11,8 +13,9 @@ function App() {
        <Navigation/>
        
        <div className="container pt-4">
-          <Route path ='/' exact  component = {CreateForm} />
-          <Route path ='/formList' exact  component = {FormList} />
+          <Route exact path ='/'   component = {CreateForm} />
+          <Route exact path ='/formList'   component = {FormList} />
+          <Route exact path ='/ProductsList'   component = {ProductsList} />
         
       </div>
 

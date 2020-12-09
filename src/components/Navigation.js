@@ -20,8 +20,10 @@ export default function Navigation(){
                     <li className="nav-item">
                         <Link className='nav-link' to='/'>List Forms</Link>
                     </li>
-                    
-                   
+                    <li className="nav-item">
+                        <Link className='nav-link' to='ProductsList'>to Products</Link>
+                    </li>
+
                 </ul>
             </div>
         </div>
