@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
     const [fLastName, setFLastName] = useState('');
     const [fPhone, setfPhone] = useState('');
     const [fDocument, setFDocument] = useState('');
+    
 
     useEffect(() => {
         if (props.location.state) {
