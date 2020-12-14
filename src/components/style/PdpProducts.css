@@ -1,0 +1,41 @@
+.imgPbproduct{
+    padding: 20px;
+    max-height: 400px;
+}
+ .container-right-details {
+       padding:50px;
+   }
+   .descriptionPage {
+        text-align: justify;
+       font-size: 20px !important;
+       margin-top: 6px;
+       padding: 20px 130px 30px 0px;
+   }
+   .price-product-normal {
+       margin-top: 20px;
+       color: red;
+   }
+   .add-to-cart-button {
+     width: 162px;
+     height: 41px;
+     font-size: 13px;
+     margin-top:14px;
+     border-color: transparent;
+     font-weight: bold;
+     font-stretch: normal;
+     font-style: normal;
+     background-color:rgb(25, 95, 199);
+     line-height: normal;
+     letter-spacing: normal;
+     text-align: center;
+     color: #ffffff;
+   }
+   h1 {
+       font-family: "Blacker Display Medium";
+       font-size: 28px;
+   }
+   p {
+       font-family: "DMSans-Medium";
+       size:13px;
+       margin-bottom: 0px !important;
+   }

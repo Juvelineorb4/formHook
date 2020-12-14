@@ -1,10 +1,10 @@
   
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import ItemList from './ItemList'
-//import { withRouter } from 'react-router-dom';
+import ItemList from './ItemList';
+import { withRouter } from 'react-router-dom';
 
-export default function ProductsList() {
+ function ProductsList(props) {
     const [items, setItems]= useState();
     const [arrayProducts, setArrayProducts] = useState();
     const [view, setView] = useState(true);
@@ -69,7 +69,7 @@ const allProducts = ()=>{
 
      switch(value){
          case "candy":
-           console.log("AQUI ESTOY ")
+          // console.log("AQUI ESTOY ")
             setAddCandy([...addCandy, items[index]]);
              break;
          case "drink":
@@ -110,13 +110,17 @@ const allProducts = ()=>{
     
      setArrayProducts(arrayCategory);
    }
- /*  console.log("-----------------");
-  console.log("CANDYS");
-  console.log(addCandy);
-  console.log("DRINKS");
-  console.log(addDrink);
-  console.log("alcohol");
-  console.log(addAlcohol);*/
+  
+   const btnDespcriton =(product)=>{
+     const pdpProduct = product;
+      props.history.push({
+        pathname: 'PdpProducts',
+        state: pdpProduct
+        
+      });
+      
+   }
+
     return (
 
         
@@ -161,6 +165,7 @@ const allProducts = ()=>{
                         name = {product.Name}
                         price ={product.Children[0].Price}
                         handleItem ={handleItem(index)}
+                        ToDescription = {()=>btnDespcriton(product)}
                         footer = {footerCard}/>
                         
                     )
@@ -170,3 +175,5 @@ const allProducts = ()=>{
       
     )
 }
+
+export default withRouter(ProductsList);

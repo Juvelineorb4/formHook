@@ -3,7 +3,8 @@ import React from 'react'
 
 function ItemList(props) {
     const {handleItem} = props
-    console.log(props.footer);
+    const {ToDescription} = props
+    //console.log(props.footer);
     return (
         
         <div className="col-12 col-md-4 p-2 " key={props.id}>
@@ -16,16 +17,18 @@ function ItemList(props) {
                                 <div className="card-body text-center">
                                 <p >{props.name}</p>
                                 <p className="font-weight-bold">Price: {props.price} $</p>
-                                <button className="btn btn-success">Agg a Carrito</button>
+                                <button className="btn btn-success" onClick={ToDescription}>Ver Mas</button>
                                 </div>
-                                
-                                <div className="card-footer " style={{ display: (props.footer ? "block" : "none") }}>
+                                {props.footer? 
+                                <div className="card-footer " >
                                     <div className="btn-group d-flex justify-content-center">
                                     <button className="btn btn-dark btn-sm " onClick={handleItem} value="candy">CANDY</button>
                                     <button className="btn btn-dark btn-sm  " onClick={handleItem} value="drink">DRINK</button>
                                     <button className="btn btn-dark  btn-sm " onClick={handleItem} value="alcohol">ALCOHOL</button>
                                     </div>
-                                </div>
+                                </div>:<div></div>}
+                                
+                                
                             </div>
                         </div>
     )
